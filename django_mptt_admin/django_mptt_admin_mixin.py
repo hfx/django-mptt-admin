@@ -274,6 +274,7 @@ class DjangoMpttAdminMixin:
         qs = self.filter_tree_queryset(qs, request)
 
         tree_data = self.get_tree_data(qs, max_level, change_list.get_filters_params())
+        print(f"DEBUG: {tree_data}")
 
         # Set safe to False because the data is a list instead of a dict
         return JsonResponse(tree_data, safe=False)

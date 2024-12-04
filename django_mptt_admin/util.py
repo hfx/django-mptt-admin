@@ -38,8 +38,10 @@ def get_tree_from_queryset(
             label = getattr(instance, item_label_field_name)
         else:
             label = str(instance)
+        print(f"DEBUG: {label}")
 
         node_info = dict(name=label, id=serialize_id(pk))
+        print(f"DEBUG: {node_info}")
         if on_create_node:
             on_create_node(instance, node_info)
 
